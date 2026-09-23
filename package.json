@@ -1,0 +1,11 @@
+{
+  "name": "ecoroute-ai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix client ci && npm --prefix client run build && npm --prefix server ci --omit=dev",
+    "start": "node server/index.js",
+    "test": "npm --prefix server test && npm --prefix client test -- --watchAll=false"
+  },
+  "engines": { "node": ">=22" }
+}

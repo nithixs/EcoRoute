@@ -1,0 +1,12 @@
+node_modules/
+build/
+.env
+.env.*
+!.env.example
+artifacts/
+*.log
+.agents/
+.codex/
+.postman/
+postman/
+.railway/

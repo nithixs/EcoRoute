@@ -1,0 +1,13 @@
+**/node_modules
+**/build
+.git
+.env
+.env.*
+!.env.example
+.agents
+.codex
+.postman
+postman
+ml-service
+artifacts
+*.log
