@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">EcoRoute AI</string>
+    <string name="title_activity_main">EcoRoute AI</string>
+    <string name="package_name">com.nithixs.ecoroute</string>
+    <string name="custom_url_scheme">com.nithixs.ecoroute</string>
+</resources>

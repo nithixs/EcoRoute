@@ -1,0 +1,7 @@
+{
+  "appId": "com.nithixs.ecoroute",
+  "appName": "EcoRoute AI",
+  "webDir": "build",
+  "android": { "allowMixedContent": false },
+  "server": { "androidScheme": "https", "cleartext": false }
+}

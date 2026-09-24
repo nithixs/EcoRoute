@@ -5,3 +5,5 @@
 !**/.env.example
 .git
 artifacts
+client/android
+client/ios

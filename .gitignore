@@ -10,3 +10,7 @@ artifacts/
 .postman/
 postman/
 .railway/
+**/local.properties
+**/.gradle/
+*.jks
+*.keystore

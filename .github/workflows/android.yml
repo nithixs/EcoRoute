@@ -1,0 +1,41 @@
+name: Android APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['client/**', '.github/workflows/android.yml']
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: npm ci
+        working-directory: client
+      - run: npm test -- --watchAll=false
+        working-directory: client
+        env:
+          CI: true
+      - run: npm run android:sync
+        working-directory: client
+      - run: npm run test:pwa
+        working-directory: client
+      - run: chmod +x gradlew && ./gradlew assembleDebug --no-daemon
+        working-directory: client/android
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EcoRoute-Android-debug
+          path: client/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14

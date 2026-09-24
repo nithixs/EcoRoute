@@ -2,6 +2,8 @@
 
 A responsive React + Express driving-route planner. The production server serves both the web app and API from one origin; no MongoDB or Python process is needed.
 
+Android and installable web support is included. See [MOBILE.md](MOBILE.md) for APK builds, native permissions, offline behaviour and device testing.
+
 ## Features
 - City search with explicit result selection, current location, and endpoint swapping.
 - Actual OSRM driving routes, available alternatives, map fitting, and turn-by-turn directions.
